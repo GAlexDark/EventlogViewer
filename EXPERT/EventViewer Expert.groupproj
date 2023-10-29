@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{A5A78A20-251B-41C7-9077-061E47EB6E47}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="EventView.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="..\plugins\CommonEvt\CommonEvt.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="EventView">
+			<MSBuild Projects="EventView.dproj"/>
+		</Target>
+		<Target Name="EventView:Clean">
+			<MSBuild Targets="Clean" Projects="EventView.dproj"/>
+		</Target>
+		<Target Name="EventView:Make">
+			<MSBuild Targets="Make" Projects="EventView.dproj"/>
+		</Target>
+		<Target Name="CommonEvt">
+			<MSBuild Projects="..\plugins\CommonEvt\CommonEvt.dproj"/>
+		</Target>
+		<Target Name="CommonEvt:Clean">
+			<MSBuild Targets="Clean" Projects="..\plugins\CommonEvt\CommonEvt.dproj"/>
+		</Target>
+		<Target Name="CommonEvt:Make">
+			<MSBuild Targets="Make" Projects="..\plugins\CommonEvt\CommonEvt.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="EventView;CommonEvt"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="EventView:Clean;CommonEvt:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="EventView:Make;CommonEvt:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

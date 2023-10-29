@@ -1,0 +1,13 @@
+#ifndef EVTLOGDB_GLOBAL_H
+#define EVTLOGDB_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+
+#if defined(EVTLOGDB_LIBRARY)
+#  define EVTLOGDBSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define EVTLOGDBSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // EVTLOGDB_GLOBAL_H

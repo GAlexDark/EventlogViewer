@@ -1,0 +1,13 @@
+LIBRARY	EvtLogBDB
+
+EXPORTS
+
+MBDBInit
+MBDBInited
+MBDBDeIntit
+MBDBClose
+MBDBAdd
+MBDBFind
+
+MBDBGetLastError
+MBDBClear

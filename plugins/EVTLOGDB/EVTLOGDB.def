@@ -1,0 +1,21 @@
+LIBRARY	EVTLOGDB
+
+EXPORTS
+
+SQLite_GetLastError
+SQLite_ClearError
+SQLite_Create
+SQLite_Free
+SQLite_Connect
+SQLite_Disconnect
+SQLite_Open
+SQLite_Close
+SQLite_Inited
+SQLite_BeginTransaction
+SQLite_CommitTransaction
+SQLite_RollbackTransaction
+SQLite_Execute
+SQLite_PrepareInsert
+SQLite_BindValue
+SQLite_WhoSearch
+SQLite_SearchResult

@@ -1,0 +1,60 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{B9CB887D-F029-4CA2-9696-9C845067F5B1}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="EXPERT\EventView.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="plugins\CommonEvt\CommonEvt.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="THREAD\EventViewThread.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="EventView">
+			<MSBuild Projects="EXPERT\EventView.dproj"/>
+		</Target>
+		<Target Name="EventView:Clean">
+			<MSBuild Targets="Clean" Projects="EXPERT\EventView.dproj"/>
+		</Target>
+		<Target Name="EventView:Make">
+			<MSBuild Targets="Make" Projects="EXPERT\EventView.dproj"/>
+		</Target>
+		<Target Name="CommonEvt">
+			<MSBuild Projects="plugins\CommonEvt\CommonEvt.dproj"/>
+		</Target>
+		<Target Name="CommonEvt:Clean">
+			<MSBuild Targets="Clean" Projects="plugins\CommonEvt\CommonEvt.dproj"/>
+		</Target>
+		<Target Name="CommonEvt:Make">
+			<MSBuild Targets="Make" Projects="plugins\CommonEvt\CommonEvt.dproj"/>
+		</Target>
+		<Target Name="EventViewThread">
+			<MSBuild Projects="THREAD\EventViewThread.dproj"/>
+		</Target>
+		<Target Name="EventViewThread:Clean">
+			<MSBuild Targets="Clean" Projects="THREAD\EventViewThread.dproj"/>
+		</Target>
+		<Target Name="EventViewThread:Make">
+			<MSBuild Targets="Make" Projects="THREAD\EventViewThread.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="EventView;CommonEvt;EventViewThread"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="EventView:Clean;CommonEvt:Clean;EventViewThread:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="EventView:Make;CommonEvt:Make;EventViewThread:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>
