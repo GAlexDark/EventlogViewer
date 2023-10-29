@@ -56,10 +56,16 @@
 *.projdata
 *.tvsconfig
 *.dsk
+*.ddp
+#AQTime
+*.optset
 
 # Delphi history and backups
 __history/
 __recovery/
+ModelSupport*/
+DCU/
+OUT/
 *.~*
 
 # Castalia statistics file (since XE7 Castalia is distributed with Delphi)
