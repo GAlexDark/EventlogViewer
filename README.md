@@ -1,5 +1,5 @@
 # The EventlogViewer project for the reading Microsoft Windows Events Logs.
-This project was closed in 2014 year.
+This project was closed in 2014.
 
 ./plugins/CommonEvt - the general purpose parser library.  
 ./plugins/Core_SQLiteDB - the classes for work with SQLite DB (Qt framework version 3 or 4).  
