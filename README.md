@@ -1,4 +1,4 @@
-# EventlogViewer
+# The EventlogViewer project for the reading Microsoft Windows Events Logs.
 This project was closed in 2014 year.
 
 ./plugins/CommonEvt - the general purpose parser library.  
